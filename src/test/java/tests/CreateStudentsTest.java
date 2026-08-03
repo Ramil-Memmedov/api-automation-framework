@@ -29,6 +29,7 @@ public class CreateStudentsTest extends BaseTest {
 
         given()
                 .log().all()
+                .header("Authorization", "Bearer " + TOKEN)
                 .contentType("application/json")
                 .body(student)
 
