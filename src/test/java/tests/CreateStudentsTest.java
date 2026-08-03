@@ -16,8 +16,12 @@ public class CreateStudentsTest extends BaseTest {
 
         int id = ThreadLocalRandom.current().nextInt(1500,4556);
 
+        String email = "ramil"
+                + System.currentTimeMillis()
+                + "@gmail.com";
+
         Student student = new Student(
-                "ramilsecond@gmail.com",
+                email,
                 "Ramil",
                 "Memmedov",
                 id
@@ -25,11 +29,12 @@ public class CreateStudentsTest extends BaseTest {
 
         given()
                 .log().all()
-                .header("Authorization", "Bearer " + TOKEN)
                 .contentType("application/json")
                 .body(student)
+
                 .when()
                 .post(StudentsEndPoints.CREATE_STUDENTS)
+
                 .then()
                 .log().all()
                 .statusCode(201);
