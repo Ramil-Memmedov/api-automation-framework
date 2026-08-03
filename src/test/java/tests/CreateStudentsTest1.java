@@ -9,7 +9,7 @@ import java.util.concurrent.ThreadLocalRandom;
 
 import static io.restassured.RestAssured.given;
 
-public class CreateStudentsTest extends BaseTest {
+public class CreateStudentsTest1 extends BaseTest {
 
     @Test
     public void createStudentsTest(){
