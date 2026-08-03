@@ -20,7 +20,8 @@ public class CreateStudentsTest extends BaseTest {
                 "Memmedov",
                 id
         );
-        given().log().all().header("Authorization","Bearer "+ TOKEN)
+        //given().log().all().header("Authorization","Bearer "+ TOKEN)
+        given().log().all()
                 .contentType("application/json")
                 .body(student)
                 .when().post(StudentsEndPoints.CREATE_STUDENTS)

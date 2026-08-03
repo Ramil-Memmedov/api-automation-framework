@@ -9,8 +9,9 @@ import static io.restassured.RestAssured.given;
 public class DeleteStudentsTest extends BaseTest {
     @Test
     public void deletestudentstest(){
-        given().log().all().header("Authorization","Bearer "+TOKEN)
-                .when().delete(StudentsEndPoints.DELETE_STUDENTS)
+        int id=6;
+        //given().log().all().header("Authorization","Bearer "+TOKEN)
+                given().log().all().when().delete(StudentsEndPoints.DELETE_STUDENTS,id)
                 .then().log().all().statusCode(200);
     }
 }

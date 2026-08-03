@@ -12,12 +12,12 @@ public class UpdateStudentsTest extends BaseTest {
 
     @Test
     public void updateStudentTest() {
-
+int id =4;
         Student student = new Student(
-                "ramil518@test.com",
+                "ramil508@test.com",
                 "Ramil",
                 "Memmedov",
-                5
+                id
         );
 
         given()
@@ -26,7 +26,7 @@ public class UpdateStudentsTest extends BaseTest {
                 .body(student)
 
                 .when()
-                .put(StudentsEndPoints.UPDATE_STUDENTS)
+                .patch(StudentsEndPoints.UPDATE_STUDENTS,id)
 
                 .then()
                 .statusCode(200)
