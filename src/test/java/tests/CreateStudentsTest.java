@@ -27,10 +27,8 @@ public class CreateStudentsTest extends BaseTest {
                 id
         );
 
-        given()
+        request
                 .log().all()
-                .header("Authorization", "Bearer " + TOKEN)
-                .contentType("application/json")
                 .body(student)
 
                 .when()
@@ -40,4 +38,4 @@ public class CreateStudentsTest extends BaseTest {
                 .log().all()
                 .statusCode(201);
     }
-}
+    }
